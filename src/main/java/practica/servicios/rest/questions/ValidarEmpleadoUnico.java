@@ -3,21 +3,25 @@ package practica.servicios.rest.questions;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
+import static net.serenitybdd.rest.SerenityRest.lastResponse;
 
 
+public class ValidarEmpleadoUnico implements Question <Boolean>{
 
-public class ValidarEmpleadoUnico implements Question <Integer>{
+    private  int code;
 
-    int STATUS_CODE=200;
+    public ValidarEmpleadoUnico(int code) {
+        this.code = code;
+    }
 
     @Override
-    public Integer answeredBy(Actor actor) {
+    public Boolean answeredBy(Actor actor) {
 
-        return STATUS_CODE;
+        return lastResponse().statusCode()==code;
 
     }
 
-    public static ValidarEmpleadoUnico porNombre(){
-        return new ValidarEmpleadoUnico();
+    public static ValidarEmpleadoUnico porCodigoEstado(int code){
+        return new ValidarEmpleadoUnico(code);
     }
 }

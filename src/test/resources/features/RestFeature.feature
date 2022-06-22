@@ -28,5 +28,5 @@ Feature: Prueba con servicios de Serenity Rest
   @Delete
   Scenario: Eliminar un empleado de manera exitosa
     When se busca el empleado a eliminar por id 5
-    Then se observa el mensaje de eliminación "Successfully! Record has been deleted"
+    Then se observa el mensaje de eliminación Successfully! Record has been deleted
 

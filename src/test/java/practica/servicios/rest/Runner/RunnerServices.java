@@ -8,8 +8,8 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(features="src/test/resources/features/RestFeature.feature",
-                 glue="practica.servicios.rest.StepDefinitions",
-                 snippets= SnippetType.CAMELCASE ,tags="@Delete"
+                 glue={"practica.servicios.rest.StepDefinitions","practica.servicios.rest.SetUp"},
+                 snippets= SnippetType.CAMELCASE //,tags="@Get1"
                  )
 
 public class RunnerServices {

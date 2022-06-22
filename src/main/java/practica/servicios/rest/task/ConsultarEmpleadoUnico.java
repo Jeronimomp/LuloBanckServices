@@ -16,7 +16,6 @@ public class ConsultarEmpleadoUnico implements Task {
     public <T extends Actor> void performAs(T actor) {
 
         actor.attemptsTo(
-                //Get.resource("/employee/"+numero)
                 Get.resource("/employee/{id}").with(req->req
                     .header("Content-Type","application/json")
                     .pathParam("id", numero)
